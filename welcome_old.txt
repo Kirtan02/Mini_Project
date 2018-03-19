@@ -1,0 +1,19 @@
+  /*$conn=mysqli_connect("localhost","root","123");
+
+  $db=mysqli_select_db($conn,"mydb");
+
+  $query="SELECT * from subjects";
+
+  $result=mysqli_query($conn,$query);
+
+    while ($row = mysqli_fetch_assoc($result)){
+      <!--echo '<tr>';
+      foreach($row as $field) {
+          echo '<td>' . htmlspecialchars($field) . '</td>';
+      }
+      echo '<!--<td><a class="waves-effect waves-light btn" href=".\attendance.php">check</a></td>'-->;
+      echo '</tr>';-->
+    }
+
+  mysqli_close($conn);
+   */?>
