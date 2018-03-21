@@ -29,16 +29,16 @@ session_start();
             <div class="background">
               <img class="responsive-img" src="./img/image.png">
             </div>
-            <a href="#!user"3><i class="material-icons">person</i></a>
+            <a href="#!user"><i class="material-icons">person</i></a>
             <a href="#!name"><span class="white-text name"><?php echo $_SESSION["username"] ?></span></a>
-            <a href="#!email"><span class="white-text email">
+            
               <?php
               $user=$_SESSION["username"];
               $conn=mysqli_connect("localhost","root","123");
 
-              $db=mysqli_select_db($conn,"login");
+              $db=mysqli_select_db($conn,"mediorder");
 
-              $query="SELECT Email FROM user WHERE Name='$user'";
+              $query="SELECT Id FROM owner WHERE Name='$user'";
 
               $result=mysqli_query($conn,$query);
 
@@ -72,9 +72,32 @@ session_start();
                 <th>Date</th>
             </tr>
           </thead>
-  
+        <tbody>
+             <?php
+              $conn=mysqli_connect("localhost","root","123");
+
+  $db=mysqli_select_db($conn,"mediorder");
+
+  $query="SELECT * from orders";
+
+  $result=mysqli_query($conn,$query);
+
+    while ($row = mysqli_fetch_assoc($result)){
+      echo '<tr>';
+      foreach($row as $field) {
+          echo '<td>' . htmlspecialchars($field) . '</td>';
+      }
+      
+      echo '</tr>';
+    }
+
+  mysqli_close($conn);
+   ?>
+          </tbody>
 
  </table>
+        <a class="waves-effect waves-light btn" href=".\attendance.php">Add</a>
+
  </div>
     <body>
       <!--Import jQuery before materialize.js-->
