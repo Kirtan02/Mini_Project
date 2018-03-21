@@ -30,7 +30,6 @@ include 'process.php';
     <form name="Login" method="post" action="">
         <input type="text"  id="Name"  name="Name" placeholder="User Name">
         <input type="password" id="Password" name="Password" placeholder="Password">
-        <input type="email" id="Email" name="Email" placeholder="Email">
         <input type="submit" name="submit" id="Submit" value="Submit">
         
 

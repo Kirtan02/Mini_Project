@@ -22,9 +22,9 @@ if(isset($_POST['submit'])){
  //Establishing Connection with server by passing server_name, user_id and pass as a patameter
  $conn = new mysqli("localhost", "root", "123");
  //Selecting Database
- $db = mysqli_select_db($conn, "login");
+ $db = mysqli_select_db($conn, "mediorder");
  //sql query to fetch information of registerd user and finds user match.
- $query = mysqli_query($conn, "SELECT * FROM user WHERE Name='$user' AND Password='$pass'");
+ $query = mysqli_query($conn, "SELECT * FROM owner WHERE Name='$user' AND Password='$pass'");
      
 //$quer = "INSERT INTO user (id,Name,Password,Email)
 //VALUES('', '$user', '$passwo','$email')";
